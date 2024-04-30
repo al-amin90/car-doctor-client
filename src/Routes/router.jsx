@@ -5,16 +5,23 @@ import Root from "../MainLayout/Root";
 import Home from "../Pages/Home/Home";
 import SingUp from "../Pages/SingUp/SingUp";
 import Login from "../Pages/Login/Login";
+import Eroorpage from "../Pages/Eroorpage/Eroorpage";
+import AddService from "../Pages/AddService/AddService";
 
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Root></Root>,
+        errorElement: <Eroorpage></Eroorpage>,
         children: [
             {
                 index: true,
                 element: <Home></Home>
+            },
+            {
+                path: "/addServices",
+                element: <AddService></AddService>
             },
         ]
     },

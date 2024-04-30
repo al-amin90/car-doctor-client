@@ -12,7 +12,7 @@ const Navbar = () => {
         <li><NavLink to="/about" className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "font-semibold border-b border-[#FF3811] text-[#FF3811]" : "font-medium hover:text-[#FF3811]"}>About</NavLink>
         </li>
-        <li><NavLink to="/services" className={({ isActive, isPending }) =>
+        <li><NavLink to="/addServices" className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "font-semibold border-b border-[#FF3811] text-[#FF3811]" : "font-medium hover:text-[#FF3811]"}>Services</NavLink>
         </li>
         <li><NavLink to="/blog" className={({ isActive, isPending }) =>
