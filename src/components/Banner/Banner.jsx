@@ -9,13 +9,13 @@ import { FaArrowRight, FaArrowLeft } from "react-icons/fa6";
 
 const Banner = () => {
     return (
-        <div className=' '>
+        <div className='max-w-7xl mx-auto w-[90%] md:w-[85%]'>
             <div className="carousel ">
-                <div id="slide1" className="carousel-item max-h-[100vh] relative w-full">
-                    <img src={banner1} className="w-full object-cover object-center min-h-[100vh]" />
-                    <div className='min-h-full min-w-full bg-gradient-to-r from-[#151515] to-[#15151500] absolute'></div>
+                <div id="slide1" className="carousel-item max-h-[calc(100vh-128px)] relative w-full">
+                    <img src={banner1} className="w-full object-cover rounded-xl object-center min-h-[calc(100vh-128px)]" />
+                    <div className='min-h-full min-w-full rounded-xl bg-gradient-to-r from-[#151515] to-[#15151500] absolute'></div>
 
-                    <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
+                    <div className="absolute flex justify-end mr-4 transform -translate-y-1/2 left-5 right-5 bottom-0">
                         <a href="#slide6" className="btn bg-[#FFFFFF33] hover:bg-[#FF3811] border-none mr-3 btn-circle"><FaArrowLeft className='text-lg text-white' /></a>
                         <a href="#slide2" className="btn bg-[#FFFFFF33] hover:bg-[#FF3811] border-none btn-circle"><FaArrowRight className='text-lg text-white' /></a>
                     </div>
@@ -31,11 +31,11 @@ const Banner = () => {
                         </div>
                     </div>
                 </div>
-                <div id="slide2" className="carousel-item max-h-[100vh] relative w-full">
-                    <img src={banner2} className="w-full object-cover object-center min-h-[100vh]" />
-                    <div className='min-h-full min-w-full bg-gradient-to-r from-[#151515] to-[#15151500] absolute'></div>
+                <div id="slide2" className="carousel-item max-h-[calc(100vh-128px)] relative w-full">
+                    <img src={banner2} className="w-full object-cover rounded-xl object-center min-h-[calc(100vh-128px)]" />
+                    <div className='min-h-full min-w-full rounded-xl bg-gradient-to-r from-[#151515] to-[#15151500] absolute'></div>
 
-                    <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
+                    <div className="absolute flex justify-end mr-4 transform -translate-y-1/2 left-5 right-5 bottom-0">
                         <a href="#slide1" className="btn bg-[#FFFFFF33] hover:bg-[#FF3811] border-none mr-3 btn-circle"><FaArrowLeft className='text-lg text-white' /></a>
                         <a href="#slide3" className="btn bg-[#FFFFFF33] hover:bg-[#FF3811] border-none btn-circle"><FaArrowRight className='text-lg text-white' /></a>
                     </div>
@@ -51,11 +51,11 @@ const Banner = () => {
                         </div>
                     </div>
                 </div>
-                <div id="slide3" className="carousel-item max-h-[100vh] relative w-full">
-                    <img src={banner3} className="w-full object-cover object-center min-h-[100vh]" />
-                    <div className='min-h-full min-w-full bg-gradient-to-r from-[#151515] to-[#15151500] absolute'></div>
+                <div id="slide3" className="carousel-item max-h-[calc(100vh-128px)] relative w-full">
+                    <img src={banner3} className="w-full object-cover rounded-xl object-center min-h-[calc(100vh-128px)]" />
+                    <div className='min-h-full min-w-full rounded-xl bg-gradient-to-r from-[#151515] to-[#15151500] absolute'></div>
 
-                    <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
+                    <div className="absolute flex justify-end mr-4 transform -translate-y-1/2 left-5 right-5 bottom-0">
                         <a href="#slide2" className="btn bg-[#FFFFFF33] hover:bg-[#FF3811] border-none mr-3 btn-circle"><FaArrowLeft className='text-lg text-white' /></a>
                         <a href="#slide4" className="btn bg-[#FFFFFF33] hover:bg-[#FF3811] border-none btn-circle"><FaArrowRight className='text-lg text-white' /></a>
                     </div>
@@ -71,11 +71,11 @@ const Banner = () => {
                         </div>
                     </div>
                 </div>
-                <div id="slide4" className="carousel-item max-h-[100vh] relative w-full">
-                    <img src={banner4} className="w-full object-cover object-center min-h-[100vh]" />
-                    <div className='min-h-full min-w-full bg-gradient-to-r from-[#151515] to-[#15151500] absolute'></div>
+                <div id="slide4" className="carousel-item max-h-[calc(100vh-128px)] relative w-full">
+                    <img src={banner4} className="w-full object-cover rounded-xl object-center min-h-[calc(100vh-128px)]" />
+                    <div className='min-h-full min-w-full rounded-xl bg-gradient-to-r from-[#151515] to-[#15151500] absolute'></div>
 
-                    <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
+                    <div className="absolute flex justify-end mr-4 transform -translate-y-1/2 left-5 right-5 bottom-0">
                         <a href="#slide3" className="btn bg-[#FFFFFF33] hover:bg-[#FF3811] border-none mr-3 btn-circle"><FaArrowLeft className='text-lg text-white' /></a>
                         <a href="#slide5" className="btn bg-[#FFFFFF33] hover:bg-[#FF3811] border-none btn-circle"><FaArrowRight className='text-lg text-white' /></a>
                     </div>
@@ -91,11 +91,11 @@ const Banner = () => {
                         </div>
                     </div>
                 </div>
-                <div id="slide5" className="carousel-item max-h-[100vh] relative w-full">
-                    <img src={banner5} className="w-full object-cover object-center min-h-[100vh]" />
-                    <div className='min-h-full min-w-full bg-gradient-to-r from-[#151515] to-[#15151500] absolute'></div>
+                <div id="slide5" className="carousel-item max-h-[calc(100vh-128px)] relative w-full">
+                    <img src={banner5} className="w-full object-cover rounded-xl object-center min-h-[calc(100vh-128px)]" />
+                    <div className='min-h-full min-w-full rounded-xl bg-gradient-to-r from-[#151515] to-[#15151500] absolute'></div>
 
-                    <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
+                    <div className="absolute flex justify-end mr-4 transform -translate-y-1/2 left-5 right-5 bottom-0">
                         <a href="#slide4" className="btn bg-[#FFFFFF33] hover:bg-[#FF3811] border-none mr-3 btn-circle"><FaArrowLeft className='text-lg text-white' /></a>
                         <a href="#slide6" className="btn bg-[#FFFFFF33] hover:bg-[#FF3811] border-none btn-circle"><FaArrowRight className='text-lg text-white' /></a>
                     </div>
@@ -111,11 +111,11 @@ const Banner = () => {
                         </div>
                     </div>
                 </div>
-                <div id="slide6" className="carousel-item max-h-[100vh] relative w-full">
-                    <img src={banner6} className="w-full object-cover object-center min-h-[100vh]" />
-                    <div className='min-h-full min-w-full bg-gradient-to-r from-[#151515] to-[#15151500] absolute'></div>
+                <div id="slide6" className="carousel-item max-h-[calc(100vh-128px)] relative w-full">
+                    <img src={banner6} className="w-full object-cover rounded-xl object-center min-h-[calc(100vh-128px)]" />
+                    <div className='min-h-full min-w-full rounded-xl bg-gradient-to-r from-[#151515] to-[#15151500] absolute'></div>
 
-                    <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">
+                    <div className="absolute flex justify-end mr-4 transform -translate-y-1/2 left-5 right-5 bottom-0">
                         <a href="#slide5" className="btn bg-[#FFFFFF33] hover:bg-[#FF3811] border-none mr-3 btn-circle"><FaArrowLeft className='text-lg text-white' /></a>
                         <a href="#slide1" className="btn bg-[#FFFFFF33] hover:bg-[#FF3811] border-none btn-circle"><FaArrowRight className='text-lg text-white' /></a>
                     </div>

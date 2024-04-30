@@ -6,11 +6,22 @@ import { HiOutlineShoppingBag } from "react-icons/hi2";
 const Navbar = () => {
 
     const NavLinks = <>
-        <li><NavLink className="font-semibold border-b border-[#FF3811] hover:text-[#FF3811]">Home</NavLink></li>
-        <li><NavLink className="font-semibold border-b border-[#FF3811] hover:text-[#FF3811]">About</NavLink></li>
-        <li><NavLink className="font-semibold border-b border-[#FF3811] hover:text-[#FF3811]">Services</NavLink></li>
-        <li><NavLink className="font-semibold border-b border-[#FF3811] hover:text-[#FF3811]">Blog</NavLink></li>
-        <li><NavLink className="font-semibold border-b border-[#FF3811] hover:text-[#FF3811]">Contact</NavLink></li>
+        <li><NavLink to="/" className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "font-semibold border-b border-[#FF3811] text-[#FF3811]" : "font-semibold hover:text-[#FF3811]"}>Home</NavLink>
+        </li>
+        <li><NavLink to="/about" className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "font-semibold border-b border-[#FF3811] text-[#FF3811]" : "font-semibold hover:text-[#FF3811]"}>About</NavLink>
+        </li>
+        <li><NavLink to="/services" className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "font-semibold border-b border-[#FF3811] text-[#FF3811]" : "font-semibold hover:text-[#FF3811]"}>Services</NavLink>
+        </li>
+        <li><NavLink to="/blog" className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "font-semibold border-b border-[#FF3811] text-[#FF3811]" : "font-semibold hover:text-[#FF3811]"}>Blog</NavLink>
+        </li>
+        <li><NavLink to="/contact" className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "font-semibold border-b border-[#FF3811] text-[#FF3811]" : "font-semibold hover:text-[#FF3811]"}>Contact</NavLink>
+        </li>
+
     </>
 
     return (
@@ -35,8 +46,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <span className='mr-3 md:mr-6 text-2xl'><HiOutlineShoppingBag /></span>
-                    <span className='mr-3 md:mr-6 text-2xl'><CiSearch /></span>
+                    <p className='mr-3 md:mr-6 text-2xl'><HiOutlineShoppingBag /></p>
+                    <p className='mr-3 md:mr-6 text-2xl'><CiSearch /></p>
                     <Link className="btn btn-outline text-sm px-6 text-[#FF3811]">Appointment</Link>
                 </div>
             </div>
