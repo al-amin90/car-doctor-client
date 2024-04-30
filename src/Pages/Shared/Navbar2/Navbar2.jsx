@@ -3,24 +3,21 @@ import { Link, NavLink } from 'react-router-dom';
 import { CiSearch } from "react-icons/ci";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 
-const Navbar = () => {
-
+const Navbar2 = () => {
     const NavLinks = <>
-        <li><NavLink to="/" className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "font-semibold border-b border-[#FF3811] text-[#FF3811]" : "font-medium hover:text-[#FF3811]"}>Home</NavLink>
+        <li><NavLink to="/order" className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "font-semibold border-b border-[#FF3811] text-[#FF3811]" : "font-medium hover:text-[#FF3811]"}>Order</NavLink>
         </li>
         <li><NavLink to="/about" className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "font-semibold border-b border-[#FF3811] text-[#FF3811]" : "font-medium hover:text-[#FF3811]"}>About</NavLink>
+            isPending ? "pending" : isActive ? "font-semibold border-b border-[#FF3811] text-[#FF3811]" : "font-medium hover:text-[#FF3811]"}>Order Review</NavLink>
         </li>
         <li><NavLink to="/services" className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "font-semibold border-b border-[#FF3811] text-[#FF3811]" : "font-medium hover:text-[#FF3811]"}>Services</NavLink>
+            isPending ? "pending" : isActive ? "font-semibold border-b border-[#FF3811] text-[#FF3811]" : "font-medium hover:text-[#FF3811]"}>Manage Inventory</NavLink>
         </li>
-        <li><NavLink to="/blog" className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "font-semibold border-b border-[#FF3811] text-[#FF3811]" : "font-medium hover:text-[#FF3811]"}>Blog</NavLink>
+        <li><NavLink to="/login" className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "font-semibold border-b border-[#FF3811] text-[#FF3811]" : "font-medium hover:text-[#FF3811]"}>Login</NavLink>
         </li>
-        <li><NavLink to="/SingUp" className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "font-semibold border-b border-[#FF3811] text-[#FF3811]" : "font-medium hover:text-[#FF3811]"}>Contact</NavLink>
-        </li>
+
 
     </>
 
@@ -40,19 +37,15 @@ const Navbar = () => {
                         <img src={logo} alt="" />
                     </Link>
                 </div>
-                <div className="navbar-center hidden lg:flex">
+
+                <div className="navbar-end hidden lg:flex">
                     <ul className="gap-10 menu-horizontal px-1">
                         {NavLinks}
                     </ul>
-                </div>
-                <div className="navbar-end">
-                    <p className='mr-3 md:mr-6 text-2xl'><HiOutlineShoppingBag /></p>
-                    <p className='mr-3 md:mr-6 text-2xl'><CiSearch /></p>
-                    <Link className="btn btn-outline text-sm px-6 text-[#FF3811]">Appointment</Link>
                 </div>
             </div>
         </div>
     );
 };
 
-export default Navbar;
+export default Navbar2;
