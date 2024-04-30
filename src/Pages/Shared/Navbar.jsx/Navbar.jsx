@@ -15,7 +15,7 @@ const Navbar = () => {
 
     return (
         <div className='max-w-7xl mx-auto w-[90%] md:w-[85%]'>
-            <div className="navbar my-8 bg-base-100">
+            <div className="navbar p-0 my-8 bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -37,7 +37,7 @@ const Navbar = () => {
                 <div className="navbar-end">
                     <span className='mr-3 md:mr-6 text-2xl'><HiOutlineShoppingBag /></span>
                     <span className='mr-3 md:mr-6 text-2xl'><CiSearch /></span>
-                    <a className="btn btn-outline text-sm px-6 text-[#FF3811]">Appointment</a>
+                    <Link className="btn btn-outline text-sm px-6 text-[#FF3811]">Appointment</Link>
                 </div>
             </div>
         </div>
