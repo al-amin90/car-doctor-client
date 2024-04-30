@@ -45,8 +45,8 @@ const Navbar = () => {
                         {NavLinks}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <p className='mr-3 md:mr-6 text-2xl'><HiOutlineShoppingBag /></p>
+                <div className="navbar-end *:cursor-pointer">
+                    <Link to="/cartDetails" className='mr-3  md:mr-6 text-2xl'><HiOutlineShoppingBag /></Link>
                     <p className='mr-3 md:mr-6 text-2xl'><CiSearch /></p>
                     <Link className="btn btn-outline text-sm px-6 text-[#FF3811]">Appointment</Link>
                 </div>

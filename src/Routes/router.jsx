@@ -7,6 +7,8 @@ import SingUp from "../Pages/SingUp/SingUp";
 import Login from "../Pages/Login/Login";
 import Eroorpage from "../Pages/Eroorpage/Eroorpage";
 import AddService from "../Pages/AddService/AddService";
+import CartDetails from "../Pages/CartDetails/CartDetails";
+import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
 
 
 const router = createBrowserRouter([
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
             {
                 path: "/addServices",
                 element: <AddService></AddService>
+            },
+            {
+                path: "/servicesDetails",
+                element: <ServiceDetails></ServiceDetails>
+            },
+            {
+                path: "/cartDetails",
+                element: <CartDetails></CartDetails>
             },
         ]
     },

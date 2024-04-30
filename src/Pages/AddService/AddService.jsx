@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const AddService = () => {
     return (
         <div className='max-w-7xl mx-auto w-[90%] md:w-[85%]'>
-            <div id="slide1" className="carousel-item max-h-64] mb-28 relative w-full">
+            <div id="slide1" className="carousel-item max-h-64] mb-20 relative w-full">
                 <img src={check} className="w-full object-cover rounded-xl object-center min-h-64]" />
                 <div className='min-h-full min-w-full rounded-xl bg-gradient-to-r from-[#151515] to-[#15151500] absolute'></div>
 
