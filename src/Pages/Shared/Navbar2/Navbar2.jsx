@@ -2,8 +2,17 @@ import logo from '../../../assets/logo.svg';
 import { Link, NavLink } from 'react-router-dom';
 import { CiSearch } from "react-icons/ci";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
+import useAuth from '../../../Utilis/useAuth';
 
 const Navbar2 = () => {
+    const { userLogOut, user } = useAuth()
+
+    const handleLogOut = () => {
+        userLogOut()
+            .then(() => console.log("log out successfully"))
+            .then(error => console.log(error))
+    }
+
     const NavLinks = <>
         <li><NavLink to="/order" className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "font-semibold border-b border-[#FF3811] text-[#FF3811]" : "font-medium hover:text-[#FF3811]"}>Order</NavLink>
@@ -14,10 +23,14 @@ const Navbar2 = () => {
         <li><NavLink to="/services" className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "font-semibold border-b border-[#FF3811] text-[#FF3811]" : "font-medium hover:text-[#FF3811]"}>Manage Inventory</NavLink>
         </li>
-        <li><NavLink to="/login" className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "font-semibold border-b border-[#FF3811] text-[#FF3811]" : "font-medium hover:text-[#FF3811]"}>Login</NavLink>
-        </li>
 
+        {
+            user ? <li><Link onClick={handleLogOut} className="btn btn-outline text-sm px-6 text-[#FF3811]">Log Out</Link></li>
+                :
+                <li><NavLink to="/login" className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "font-semibold border-b border-[#FF3811] text-[#FF3811]" : "font-medium hover:text-[#FF3811]"}>Login</NavLink>
+                </li>
+        }
 
     </>
 
@@ -39,7 +52,7 @@ const Navbar2 = () => {
                 </div>
 
                 <div className="navbar-end hidden lg:flex">
-                    <ul className="gap-10 menu-horizontal px-1">
+                    <ul className="gap-10 items-center menu-horizontal px-1">
                         {NavLinks}
                     </ul>
                 </div>

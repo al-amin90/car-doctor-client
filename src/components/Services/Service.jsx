@@ -2,13 +2,16 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { MutatingDots } from 'react-loader-spinner';
 import { FaArrowRight } from "react-icons/fa6";
+import { baseURL } from '../../Utilis/url';
+import { useNavigate } from 'react-router-dom';
 
 const Service = () => {
+    const navigate = useNavigate()
 
     const { isError, error, isPending, data: services } = useQuery({
         queryKey: ['services'],
         queryFn: async () => {
-            const res = await fetch('/services.json')
+            const res = await fetch(`${baseURL}/services`)
             return res.json()
         }
     })
@@ -52,7 +55,7 @@ const Service = () => {
                                 <h2 className="pt-5 text-xl font-bold">{ser?.title}</h2>
                                 <div className="flex text-[#FF3811] text-lg font-semibold justify-between items-center">
                                     <p>Price : ${ser?.price}</p>
-                                    <button className="btn btn-circle text-[#FF3811] text-lg bg-transparent"><FaArrowRight /></button>
+                                    <button onClick={() => navigate(`/servicesDetails/${ser._id}`)} className="btn btn-circle text-[#FF3811] text-lg bg-transparent"><FaArrowRight /></button>
                                 </div>
                             </div>
                         </div>

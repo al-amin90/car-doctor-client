@@ -1,15 +1,18 @@
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa6';
 import check from '../../assets/images/checkout/checkout.png';
-import serDetails from '../../assets/images/checkout/servDeta.png';
 import step1 from '../../assets/images/checkout/step1.png';
 import step2 from '../../assets/images/checkout/step2.png';
 import step3 from '../../assets/images/checkout/step3.png';
 import video from '../../assets/images/checkout/video.png';
 import { HiDocumentChartBar } from "react-icons/hi2";
 import logo from '../../assets/images/checkout/logoDeta.png';
+import { Link, useLoaderData } from 'react-router-dom';
 
 
 const ServiceDetails = () => {
+    const service = useLoaderData()
+    const { _id, facility, description, img, price, title } = service;
+
     return (
         <div className='max-w-7xl mx-auto w-[90%] md:w-[85%]'>
             <div id="slide1" className="carousel-item max-h-64] mb-24 relative w-full">
@@ -27,41 +30,25 @@ const ServiceDetails = () => {
             <div className='grid lg:grid-cols-3 mb-28 gap-7 grid-cols-1'>
                 <div className='col-span-2'>
                     <div>
-                        <figure><img src={serDetails} alt="" /></figure>
-                        <h3 className='mt-11 mb-6 font-bold text-3xl text-[#151515]'>Unique Car Engine Service</h3>
-                        <p className='font-light leading-relaxed text-[#737373] text-sm'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. </p>
+                        <figure><img className='h-80 w-full object-cover object-center rounded-xl' src={img} alt="" /></figure>
+                        <h3 className='mt-11 mb-6 font-bold text-3xl text-[#151515]'>{title} Service</h3>
+                        <p className='font-light leading-relaxed text-[#737373] text-sm'>{description}</p>
+                        {/* facility is here */}
                         <div className='grid grid-cols-2 my-7 gap-5'>
-                            <div className="card bg-[#F3F3F3] rounded-lg border-t-2 border-[#FF3811] p-5 text-primary-content">
-                                <div className="card-body">
-                                    <h2 className="text-[#444444] font-bold text-xl">Instant Car Services</h2>
-                                    <p className='font-light text-[#737373]'>It uses a dictionary of over 200 Latin words, combined with a model sentence structures.</p>
+                            {
+                                facility?.map((f, idx) => <div key={idx} className="card bg-[#F3F3F3] rounded-lg border-t-2 border-[#FF3811] p-5 text-primary-content">
+                                    <div className="card-body">
+                                        <h2 className="text-[#444444] font-bold text-xl">{f?.name}</h2>
+                                        <p className='font-light text-[#737373]'>{f?.details}</p>
 
-                                </div>
-                            </div>
-                            <div className="card bg-[#F3F3F3] rounded-lg border-t-2 border-[#FF3811] p-5 text-primary-content">
-                                <div className="card-body">
-                                    <h2 className="text-[#444444] font-bold text-xl">24/7 Quality Service</h2>
-                                    <p className='font-light text-[#737373]'>It uses a dictionary of over 200 Latin words, combined with a model sentence structures.</p>
+                                    </div>
+                                </div>)
+                            }
 
-                                </div>
-                            </div>
-                            <div className="card bg-[#F3F3F3] rounded-lg border-t-2 border-[#FF3811] p-5 text-primary-content">
-                                <div className="card-body">
-                                    <h2 className="text-[#444444] font-bold text-xl">Easy Customer Service</h2>
-                                    <p className='font-light text-[#737373]'>It uses a dictionary of over 200 Latin words, combined with a model sentence structures.</p>
-
-                                </div>
-                            </div>
-                            <div className="card bg-[#F3F3F3] rounded-lg border-t-2 border-[#FF3811] p-5 text-primary-content">
-                                <div className="card-body">
-                                    <h2 className="text-[#444444] font-bold text-xl">Quality Cost Service</h2>
-                                    <p className='font-light text-[#737373]'>It uses a dictionary of over 200 Latin words, combined with a model sentence structures.</p>
-
-                                </div>
-                            </div>
                         </div>
                         <p className='font-light leading-relaxed text-[#737373] text-sm'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. </p>
                     </div>
+                    {/* 3 Simple Steps */}
                     <div>
                         <h3 className='mt-11 mb-6 font-bold text-3xl text-[#151515]'>3 Simple Steps to Process</h3>
                         <p className='font-light leading-relaxed text-[#737373] text-sm'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. </p>
@@ -172,8 +159,10 @@ const ServiceDetails = () => {
                         </div>
 
                     </div>
-                    <h2 className='text-3xl my-7 text-[#151515 font-bold'>Price $250.00</h2>
-                    <button className="btn w-full border-none text-base rounded-md text-white bg-[#FF3811]">Proceed Checkout</button>
+                    <h2 className='text-3xl my-7 text-[#151515 font-bold'>Price ${price}</h2>
+                    <Link to={`/checkOut/${_id}`}>
+                        <button className="btn w-full border-none text-base rounded-md text-white bg-[#FF3811]">Proceed Checkout</button>
+                    </Link>
                 </div>
             </div>
         </div>

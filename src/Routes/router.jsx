@@ -9,6 +9,8 @@ import Eroorpage from "../Pages/Eroorpage/Eroorpage";
 import AddService from "../Pages/AddService/AddService";
 import CartDetails from "../Pages/CartDetails/CartDetails";
 import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
+import { baseURL } from "../Utilis/url";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -26,12 +28,20 @@ const router = createBrowserRouter([
                 element: <AddService></AddService>
             },
             {
-                path: "/servicesDetails",
-                element: <ServiceDetails></ServiceDetails>
+                path: "/servicesDetails/:id",
+                element: <ServiceDetails></ServiceDetails>,
+                loader: ({ params }) => fetch(`${baseURL}/services/${params.id}`)
+            },
+            {
+                path: "/checkOut/:id",
+                element: <AddService></AddService>,
+                loader: ({ params }) => fetch(`${baseURL}/service/${params.id}`)
             },
             {
                 path: "/cartDetails",
-                element: <CartDetails></CartDetails>
+                element: <PrivateRoute>
+                    <CartDetails></CartDetails>
+                </PrivateRoute>
             },
         ]
     },

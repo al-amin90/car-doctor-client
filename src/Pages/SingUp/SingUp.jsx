@@ -1,13 +1,32 @@
 import sing from '../../assets/images/login/login.svg';
 import Navbar2 from '../Shared/Navbar2/Navbar2';
-import google from "../../assets/icons/goo.png"
-import linkdin from "../../assets/icons/link.png"
-import face from "../../assets/icons/Facebook.png"
 import { useNavigate } from 'react-router-dom';
+import useAuth from '../../Utilis/useAuth';
+import SocialMediaLogIn from '../../components/SocialMediaLogIn/SocialMediaLogIn';
 
 const SingUp = () => {
     const navigate = useNavigate()
+    const { createUser } = useAuth()
 
+    const handleSubmit = e => {
+        e.preventDefault()
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        console.log(name, email, password);
+        createUser(email, password)
+            .then(result => {
+                if (result.user) {
+                    form.reset()
+                    alert("Account create SuccessFully")
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            })
+    }
 
     return (
         <div>
@@ -21,7 +40,7 @@ const SingUp = () => {
                         <div className="card  flex-1 p-16 ml-24 shrink-0 w-full border">
                             <h2 className='text-center font-semibold mb-10 text-3xl'>Sign Up</h2>
 
-                            <form className="">
+                            <form onSubmit={handleSubmit} className="">
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="text-base font-semibold">Name</span>
@@ -45,12 +64,7 @@ const SingUp = () => {
                                 </div>
                             </form>
                             <div className='text-base text-center'>
-                                <p className='text-[#444444] my-5'>Or Sign Up with</p>
-                                <div className='flex mb-7 items-center justify-center gap-3'>
-                                    <figure><img src={google} className="cursor-pointer" /></figure>
-                                    <figure><img src={linkdin} className="cursor-pointer" /></figure>
-                                    <figure><img src={face} className="cursor-pointer" /></figure>
-                                </div>
+                                <SocialMediaLogIn></SocialMediaLogIn>
                                 <p className='text-[#A2A2A2]'>Already have an account? <span onClick={() => navigate("/login")} className='text-[#FF3811] cursor-pointer'>Login</span></p>
                             </div>
                         </div>
