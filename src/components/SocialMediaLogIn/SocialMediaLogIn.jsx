@@ -2,14 +2,18 @@ import google from "../../assets/icons/goo.png"
 import linkdin from "../../assets/icons/link.png"
 import face from "../../assets/icons/Facebook.png"
 import useAuth from "../../Utilis/useAuth";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SocialMediaLogIn = () => {
     const { handleGoogleProvider } = useAuth()
+    const navigate = useNavigate()
+    const location = useLocation()
 
     const handleGoogle = () => {
         handleGoogleProvider()
             .then(result => {
                 if (result.user) {
+                    navigate(location?.state || "/")
                     alert("Google Sing in successfully")
                 }
             })

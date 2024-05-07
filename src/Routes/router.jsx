@@ -24,17 +24,13 @@ const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
-                path: "/addServices",
-                element: <AddService></AddService>
-            },
-            {
                 path: "/servicesDetails/:id",
                 element: <ServiceDetails></ServiceDetails>,
                 loader: ({ params }) => fetch(`${baseURL}/services/${params.id}`)
             },
             {
                 path: "/checkOut/:id",
-                element: <AddService></AddService>,
+                element: <PrivateRoute><AddService></AddService></PrivateRoute>,
                 loader: ({ params }) => fetch(`${baseURL}/service/${params.id}`)
             },
             {

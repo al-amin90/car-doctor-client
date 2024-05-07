@@ -1,9 +1,11 @@
 import { MutatingDots } from "react-loader-spinner";
 import useAuth from '../Utilis/useAuth';
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 
 const PrivateRoute = ({ children }) => {
     const { user, loading } = useAuth()
+    const location = useLocation()
+    console.log(location.pathname);
 
     if (loading) {
         return <div className="flex items-center justify-center my-40">
@@ -25,7 +27,7 @@ const PrivateRoute = ({ children }) => {
         return children
     }
 
-    return <Navigate to="/login"></Navigate>
+    return <Navigate to="/login" state={location.pathname}></Navigate>
 };
 
 export default PrivateRoute;

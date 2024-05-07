@@ -1,12 +1,15 @@
 import sing from '../../assets/images/login/login.svg';
 import Navbar2 from '../Shared/Navbar2/Navbar2';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../Utilis/useAuth';
 import SocialMediaLogIn from '../../components/SocialMediaLogIn/SocialMediaLogIn';
+import axios from 'axios';
+import { baseURL } from '../../Utilis/url';
 
 const Login = () => {
     const navigate = useNavigate()
     const { userLogin } = useAuth()
+    const location = useLocation()
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -17,6 +20,7 @@ const Login = () => {
 
         userLogin(email, password)
             .then(result => {
+
                 if (result.user) {
                     alert("Login in successfully")
                 }

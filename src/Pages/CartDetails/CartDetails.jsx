@@ -5,17 +5,21 @@ import useAuth from "../../Utilis/useAuth";
 import { baseURL } from "../../Utilis/url";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const CartDetails = () => {
     const { user } = useAuth();
     const [carts, setCarts] = useState(null)
 
     useEffect(() => {
-        fetch(`${baseURL}/bookings?email=${user.email}`)
-            .then(res => res.json())
-            .then(data => {
-                setCarts(data);
+        axios.get(`${baseURL}/bookings?email=${user.email}`, { withCredentials: true })
+            .then(res => {
+                setCarts(res.data)
             })
+
+        // fetch(`${baseURL}/bookings?email=${user.email}`)
+        //     .then(res => res.json())
+        //     .then(data => setCarts(data));
     }, [])
 
     console.log(carts);
